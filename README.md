@@ -1,18 +1,49 @@
-# React + Vite
+# Instructions for Working with this Repository
+To keep the main branch clean and avoid merge conflicts, every team member should follow this daily routine when working on this repository.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### 1. Switch to `main` and get the latest updates
+Always make sure your local `main` branch has the latest code from GitHub before starting any new feature or bug fix.
 
-Currently, two official plugins are available:
+```bash
+git checkout main
+git pull origin main
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 2.Create a new branch for your task
 
-## React Compiler
+Never work directly on main. Create a descriptive branch name based on what you are building (e.g., feature/login-page or fix/navbar-bug).
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+```bash
+git checkout -b feature/your-feature-name
+```
 
-Note: This will impact Vite dev & build performances.
+### 3. Do your work & commit changes
 
-## Expanding the ESLint configuration
+Work on your code locally. Make small, clear commits with descriptive messages as you progress.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+# Check modified files
+git status
+
+# Stage your changes
+git add .
+
+# Commit with a meaningful message
+git commit -m "Add authentication logic to login form"
+```
+
+### 4. Push your branch to GitHub
+
+When your code is ready or you want to save your progress remotely, push your new branch to GitHub.
+
+```
+git push -u origin feature/your-feature-name
+```
+
+### 5. Merging Your Code (Pull Request)
+
+a. Go to the repository on GitHub.
+
+b. Click Compare & pull request next to your pushed branch.
+
+c. Add a clear title and description explaining what changes were made.
