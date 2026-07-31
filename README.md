@@ -1,158 +1,18 @@
-# 🏦 DigitalBank - Digital Banking Website
+# React + Vite
 
-A modern and responsive Digital Banking website built as a college group project using the MERN stack. The application provides a clean banking interface where users can manage accounts, view transactions, transfer money, and monitor their financial activities.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 👥 Team Members
+Currently, two official plugins are available:
 
-- Member 1 – Frontend & Landing Pages
-- Member 2 – Authentication & Dashboard
-- Member 3 – Banking Features & UI Integration
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
----
+## React Compiler
 
-## 🎯 Project Objective
+The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
 
-To design and develop a secure, user-friendly digital banking platform that demonstrates modern web development practices using the MERN stack.
+Note: This will impact Vite dev & build performances.
 
----
+## Expanding the ESLint configuration
 
-## ✨ Features
-
-### Public Pages
-- Home
-- About
-- Services
-- Contact
-- Login
-- Sign Up
-
-### User Dashboard
-- Dashboard Overview
-- User Profile
-- Account Balance
-- Transaction History
-- Transfer Money
-- My Cards
-- Notifications
-- Settings
-
----
-
-## 🎨 Theme
-
-- Primary Color: Green
-- Secondary Color: White
-- Responsive Design
-- Modern Banking UI
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-- React.js
-- Vite
-- Tailwind CSS
-- React Router
-- React Icons
-
-### Backend *(To be implemented)*
-- Node.js
-- Express.js
-
-### Database *(To be implemented)*
-- MongoDB
-
----
-
-## 📂 Project Structure
-
-```
-client/
-│
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── pages/
-│   ├── layouts/
-│   ├── hooks/
-│   ├── services/
-│   ├── utils/
-│   ├── App.jsx
-│   └── main.jsx
-│
-└── package.json
-```
-
----
-
-## 🚀 Getting Started
-
-Clone the repository
-
-```bash
-git clone <repository-url>
-```
-
-Install dependencies
-
-```bash
-npm install
-```
-
-Run the project
-
-```bash
-npm run dev
-```
-
----
-
-## 🌱 Git Workflow
-
-Each team member works on their own branch.
-
-```
-main
-├── dev-member1
-├── dev-member2
-└── dev-member3
-```
-
-Workflow:
-1. Pull latest changes from `main`
-2. Work on your branch
-3. Commit meaningful changes
-4. Push your branch
-5. Create a Pull Request
-6. Merge after review
-
----
-
-## 📅 Development Status
-
-- [x] Project Planning
-- [ ] Frontend Development
-- [ ] Backend Development
-- [ ] Database Integration
-- [ ] Testing
-- [ ] Deployment
-
----
-
-## 📜 License
-
-This project is developed for educational purposes as part of a college group project.
-
----
-
-## 📌 Future Enhancements
-
-- JWT Authentication
-- Email Verification
-- Live Transaction Updates
-- Online Bill Payments
-- AI Financial Assistant
-- Dark Mode
-- Analytics Dashboard
-- Mobile App
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
