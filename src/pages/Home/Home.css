@@ -1,0 +1,373 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap");
+.hero-page {
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f7fbf7;
+  color: #123628;
+  font-family: Manrope, sans-serif;
+  background-image:
+    radial-gradient(
+      circle at 76% 21%,
+      #ccffe0 0,
+      rgba(204, 255, 224, 0.62) 13%,
+      transparent 32%
+    ),
+    radial-gradient(circle at 10% 85%, #e4f8d8 0, transparent 27%);
+}
+.nav {
+  height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -1.4px;
+}
+.brand span {
+  color: #19a95c;
+  font-size: 27px;
+  margin-right: 5px;
+}
+.nav-links {
+  display: flex;
+  gap: 35px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #537064;
+}
+.nav-links a:hover {
+  color: #149852;
+}
+.nav-login {
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero {
+  min-height: 650px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 30px;
+  padding: 60px 0 20px;
+}
+.eyebrow {
+  color: #138a4c;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  font-size: 10px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow span {
+  width: 25px;
+  height: 1px;
+  background: #1db765;
+}
+.hero h1 {
+  font-size: clamp(45px, 5.2vw, 76px);
+  line-height: 1.05;
+  letter-spacing: -4px;
+  margin: 18px 0;
+  color: #103c2a;
+}
+.hero h1 em {
+  font-family: "Playfair Display", serif;
+  color: #13a65a;
+  font-weight: 600;
+}
+.hero-text {
+  max-width: 470px;
+  color: #60766a;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.hero-actions {
+  display: flex;
+  gap: 13px;
+  margin: 30px 0;
+}
+.button {
+  font-size: 13px;
+  font-weight: 800;
+  border-radius: 8px;
+  padding: 15px 22px;
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+}
+.button-primary {
+  background: #149b55;
+  color: white;
+  box-shadow: 0 13px 25px #1b9a5640;
+}
+.button-primary:hover {
+  transform: translateY(-3px);
+  background: #0b8042;
+}
+.button-outline {
+  border: 1px solid #b7d5c1;
+  color: #24533c;
+}
+.trusted {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  color: #6e8175;
+}
+.trusted strong {
+  color: #254c3a;
+}
+.trusted small {
+  display: block;
+  color: #e6a51f;
+  letter-spacing: 2px;
+  margin-top: 3px;
+}
+.avatars {
+  display: flex;
+}
+.avatars b {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  border: 2px solid #f7fbf7;
+  margin-left: -8px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: #c48a76;
+  font-size: 9px;
+}
+.avatars b:nth-child(2) {
+  background: #476e93;
+}
+.avatars b:nth-child(3) {
+  background: #d2a14c;
+}
+.avatars b:last-child {
+  background: #194d36;
+}
+.phone-scene {
+  height: 550px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.phone {
+  z-index: 2;
+  width: 265px;
+  height: 522px;
+  background: #fff;
+  border: 8px solid #173b2c;
+  border-radius: 37px;
+  padding: 19px 16px;
+  color: #163e2c;
+  box-shadow: 0 30px 44px #144a2e38;
+  position: relative;
+}
+.notch {
+  position: absolute;
+  width: 86px;
+  height: 17px;
+  background: #173b2c;
+  border-radius: 0 0 14px 14px;
+  top: 0;
+  left: 82px;
+}
+.phone-top {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  font-weight: 700;
+}
+.welcome {
+  font-size: 10px;
+  color: #84978d;
+  margin: 24px 0 8px;
+}
+.available {
+  font-size: 8px;
+  color: #82958b;
+  letter-spacing: 1px;
+}
+.phone h2 {
+  font-size: 26px;
+  letter-spacing: -1.8px;
+  margin: 1px 0 17px;
+}
+.phone h2 span {
+  font-size: 15px;
+}
+.phone h2 svg {
+  font-size: 10px;
+  color: #779385;
+  margin-left: 8px;
+}
+.account-card {
+  height: 111px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #18af60, #087444);
+  padding: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 15px #0f90483d;
+}
+.account-card span {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+.account-card b {
+  font-family: "DM Mono";
+  font-size: 15px;
+  letter-spacing: 1px;
+  margin-top: 28px;
+}
+.account-card small {
+  font-size: 8px;
+  margin-top: 3px;
+  opacity: 0.8;
+}
+.quick p,
+.activity p {
+  font-size: 10px;
+  font-weight: 800;
+  margin: 17px 0 8px;
+}
+.quick div {
+  display: flex;
+  gap: 9px;
+}
+.quick button {
+  padding: 8px 9px;
+  background: #eff8f1;
+  color: #137b44;
+  border-radius: 7px;
+  font-size: 8px;
+  font-weight: 700;
+}
+.quick button svg {
+  margin-right: 4px;
+}
+.activity span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 9px;
+  color: #5e7669;
+}
+.activity i {
+  font-style: normal;
+  background: #faf1df;
+  padding: 6px;
+  border-radius: 7px;
+}
+.activity b {
+  margin-left: auto;
+  color: #254c3a;
+}
+.orbit {
+  position: absolute;
+  border: 1px solid #78d49b;
+  border-radius: 50%;
+  transform: rotate(-35deg);
+}
+.orbit-one {
+  width: 490px;
+  height: 300px;
+}
+.orbit-two {
+  width: 560px;
+  height: 355px;
+  border-color: #b5ebc7;
+}
+.float-tag {
+  z-index: 3;
+  position: absolute;
+  background: #fff;
+  border-radius: 10px;
+  padding: 11px 12px;
+  box-shadow: 0 12px 27px #1a5a3530;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.float-tag svg {
+  color: #18a45b;
+  font-size: 17px;
+}
+.growth {
+  top: 95px;
+  right: 0;
+}
+.growth span {
+  color: #799086;
+}
+.growth strong {
+  color: #10a957;
+  display: block;
+  font-size: 13px;
+}
+.secure {
+  left: 4px;
+  bottom: 108px;
+}
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 28px;
+  font-size: 10px;
+  color: #6f887a;
+}
+.hero-bottom p {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #1d563b;
+}
+.hero-bottom i {
+  color: #17a359;
+  font-family: "Playfair Display";
+}
+@media (max-width: 760px) {
+  .nav-links {
+    display: none;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 30px;
+    text-align: center;
+  }
+  .hero-copy {
+    display: grid;
+    justify-items: center;
+  }
+  .hero h1 {
+    letter-spacing: -2.5px;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .phone-scene {
+    transform: scale(0.84);
+    height: 465px;
+  }
+  .hero-bottom {
+    display: none;
+  }
+  .trusted {
+    text-align: left;
+  }
+}
