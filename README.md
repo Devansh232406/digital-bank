@@ -1,4 +1,4 @@
-# Instructions for Working with this Repository
+# Instructions for Working with Repository
 To keep the main branch clean and avoid merge conflicts, every team member should follow this daily routine when working on this repository.
 
 ### 1. Switch to `main` and get the latest updates
