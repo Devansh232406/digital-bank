@@ -39,6 +39,9 @@ digital-bank/
 └── transfer-money.html# Money transfer interface
 
 
+
+```
+
 # 🤝 Contribution & Git Workflow Guide
 
 Welcome to the project! 🚀
@@ -72,7 +75,6 @@ Clone the repository to your computer:
 
 ```bash
 git clone https://github.com/USERNAME/REPOSITORY.git
-```
 
 Move into the project:
 
