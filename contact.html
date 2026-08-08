@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Digital Bank Banking</title>
+  <style>
+    /* --- CSS RESET & GLOBAL VARIABLES --- */
+    :root {
+      --primary: #0fa35f;
+      --primary-dark: #0c824c;
+      --primary-light: #e8f8f0;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-body: #ffffff;
+      --bg-card: #f8fafc;
+      --border-color: #e2e8f0;
+      --radius-xl: 28px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* --- BUTTONS --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+    }
+
+    /* --- NAVIGATION --- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-icon {
+      color: var(--primary);
+      font-size: 1.7rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
+      font-weight: 600;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 4px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .search-btn {
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    /* --- PAGE HERO --- */
+    .contact-hero {
+      background: linear-gradient(135deg, #e1f7ec 0%, #f3fcf7 100%);
+      border-radius: var(--radius-xl);
+      padding: 65px 40px;
+      text-align: center;
+      margin: 20px 0 60px;
+      border: 1px solid rgba(15, 163, 95, 0.15);
+    }
+
+    .contact-hero h1 {
+      font-size: 2.8rem;
+      color: #0c3822;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+
+    .contact-hero p {
+      color: #2c5942;
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* --- CONTACT LAYOUT --- */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 50px;
+      margin-bottom: 80px;
+      align-items: start;
+    }
+
+    /* Contact Details Column */
+    .contact-info {
+      background: var(--bg-card);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .contact-info > p {
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      font-size: 0.95rem;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .info-details strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .info-details p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Form Column */
+    .contact-form {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(15, 163, 95, 0.15);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 130px;
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+      background-color: #0b1a13;
+      color: #ffffff;
+      padding: 45px 0 25px;
+      font-size: 0.9rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 30px;
+      margin-bottom: 25px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      opacity: 0.8;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .footer-copyright {
+      text-align: center;
+      opacity: 0.5;
+      font-size: 0.82rem;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 850px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAVBAR -->
+  <header class="container">
+    <nav class="navbar">
+      <a href="dashboard.html" class="logo">
+        <span class="logo-icon">▲</span> Digital Bank
+      </a>
+      <ul class="nav-links">
+        <li><a href="dashboard.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="search-btn" aria-label="Search">🔍</button>
+        <a href="contact.html" class="btn btn-primary">Open Account</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <section class="contact-hero">
+      <h1>Get in Touch</h1>
+      <p>Have questions about setting up an account or using our services? Our dedicated support team is here 24/7 to assist you.</p>
+    </section>
+
+    <section class="contact-layout">
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p>Reach out through any of these options or send us a message via the form.</p>
+        
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div class="info-details">
+            <strong>Headquarters</strong>
+            <p>4/16 Student Circle , Gumanpura<br>Kota,324005</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div class="info-details">
+            <strong>Phone Support</strong>
+            <p>1-800-555-Digital Bank (2739)<br>Toll-free 24/7</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">✉️</div>
+          <div class="info-details">
+            <strong>Email Support</strong>
+            <p>support@Digital Bankbanking.com</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Cristiano" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" class="form-control" placeholder="Cris@example.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" class="form-control">
+              <option>General Inquiry</option>
+              <option>Account Setup</option>
+              <option>Loans & Interest</option>
+              <option>Technical Support</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" class="form-control" placeholder="How can we help you today?" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="dashboard.html" class="logo" style="color: white;">
+          <span class="logo-icon">▲</span> Digital Bank
+        </a>
+        <div class="footer-links">
+          <a href="dashboard.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2026 Digital Bank Digital Bank. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

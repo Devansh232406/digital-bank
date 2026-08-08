@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Bank - Your Financial Future, Simplified</title>
+  <style>
+    
+    :root {
+      --primary: #0fa35f;
+      --primary-dark: #0c824c;
+      --primary-light: #e8f8f0;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-body: #ffffff;
+      --bg-card: #f8fafc;
+      --border-color: #e2e8f0;
+      --radius-xl: 28px;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-body);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* --- BUTTONS --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 1.5px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary-light);
+    }
+
+    .btn-white {
+      background-color: #ffffff;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-white:hover {
+      background-color: #f1f5f9;
+    }
+
+    /* --- NAVIGATION --- */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+    }
+
+    .logo-icon {
+      color: var(--primary);
+      font-size: 1.7rem;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
+      font-weight: 600;
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 4px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .search-btn {
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #ddf7ea 0%, #edfbf4 100%);
+      border-radius: var(--radius-xl);
+      padding: 50px 60px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 40px;
+      margin: 20px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content h1 {
+      font-size: 3.3rem;
+      line-height: 1.15;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #0d3b24;
+      letter-spacing: -1px;
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      color: #2d5a43;
+      margin-bottom: 32px;
+      max-width: 440px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+    }
+
+    .phone-mockup {
+      width: 260px;
+      height: 520px;
+      background: #111;
+      border-radius: 40px;
+      padding: 12px;
+      margin: 0 auto;
+      box-shadow: 0 25px 50px -12px rgba(15, 163, 95, 0.25);
+      position: relative;
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .phone-header {
+      background: var(--primary);
+      color: white;
+      padding: 28px 16px 20px;
+      text-align: center;
+    }
+
+    .phone-balance {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .phone-body {
+      padding: 16px;
+      flex-grow: 1;
+      background: #f8fafc;
+    }
+
+    .phone-row {
+      background: white;
+      padding: 12px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.82rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: var(--text-main);
+      letter-spacing: -0.5px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 70px;
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 26px 22px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-icon {
+      width: 46px;
+      height: 46px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* --- EXPLORE ACCOUNTS --- */
+    .accounts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 70px;
+    }
+
+    .account-card {
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 250px;
+      background: #ffffff;
+    }
+
+    .account-card h3 {
+      font-size: 1.35rem;
+      margin-bottom: 10px;
+    }
+
+    .account-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      max-width: 220px;
+    }
+
+    /* --- MANAGE YOUR MONEY --- */
+    .manage-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    .manage-item {
+      display: flex;
+      gap: 18px;
+      margin-bottom: 26px;
+    }
+
+    .manage-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .manage-item h4 {
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+
+    .manage-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* --- TESTIMONIAL --- */
+    .testimonial {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 70px;
+      border: 1px solid var(--border-color);
+    }
+
+    .avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: #475569;
+      flex-shrink: 0;
+    }
+
+    .testimonial-text p {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #334155;
+    }
+
+    .stars {
+      color: #f59e0b;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    /* --- APP DOWNLOAD BANNER --- */
+    .app-banner {
+      background: var(--primary);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 50px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 80px;
+    }
+
+    .app-banner h2 {
+      font-size: 2.1rem;
+      margin-bottom: 10px;
+    }
+
+    .app-banner p {
+      opacity: 0.9;
+      font-size: 1.05rem;
+    }
+
+    .store-buttons {
+      display: flex;
+      gap: 14px;
+    }
+
+    .store-btn {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background 0.2s;
+    }
+
+    .store-btn:hover {
+      background: #1e293b;
+    }
+
+    /* --- FOOTER --- */
+    .footer {
+      background-color: #0b1a13;
+      color: #ffffff;
+      padding: 45px 0 25px;
+      font-size: 0.9rem;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 30px;
+      margin-bottom: 25px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+      opacity: 0.8;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .footer-copyright {
+      text-align: center;
+      opacity: 0.5;
+      font-size: 0.82rem;
+    }
+
+    /* --- RESPONSIVE MEDIA QUERIES --- */
+    @media (max-width: 960px) {
+      .hero, .manage-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 30px;
+      }
+      .hero-content p {
+        margin: 0 auto 24px;
+      }
+      .hero-buttons, .store-buttons {
+        justify-content: center;
+      }
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .accounts-grid {
+        grid-template-columns: 1fr;
+      }
+      .app-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .testimonial {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="container">
+    <nav class="navbar">
+  <a href="dashboard.html" class="logo">
+    <span class="logo-icon">▲</span> Digital Bank
+  </a>
+  <ul class="nav-links">
+    <li><a href="dashboard.html" class="active">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="search-btn" aria-label="Search">🔍</button>
+    <a href="contact.html" class="btn btn-primary">Open Account</a>
+    <a href="contact.html" class="btn">Log In</a>
+  </div>
+</nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Your Financial Future, Simplified.</h1>
+        <p>Experience seamless digital banking. Simple. Secure. Smart.</p>
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary">Get Started</a>
+          <a href="#" class="btn btn-white">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <div class="phone-header">
+              <small>Digital Bank</small>
+              <div class="phone-balance">29,950.00 Rs</div>
+            </div>
+            <div class="phone-body">
+              <div class="phone-row">
+                <span>Checking</span>
+                <strong>1,45,000.00 Rs</strong>
+              </div>
+              <div class="phone-row">
+                <span>Savings Growth</span>
+                <strong>+12.4%</strong>
+              </div>
+              <div class="phone-row">
+                <span>Business Fund</span>
+                <strong>8,20,000.00 Rs</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY FEATURES -->
+    <section>
+      <h2 class="section-title">Key Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">⇄</div>
+          <h3>Instant Transfers</h3>
+          <p>Instant transfers to account holders with zero hidden transfer fees.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>High-Yield Savings</h3>
+          <p>Experience seamless digital banking and industry-leading yield savings.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎧</div>
+          <h3>24/7 Support</h3>
+          <p>Continuous support whenever you need assistance with your accounts.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure Accounts</h3>
+          <p>Advanced security and encryption keeping your money safe 24/7.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPLORE OUR ACCOUNTS -->
+    <section>
+      <h2 class="section-title">Explore Our Accounts</h2>
+      <div class="accounts-grid">
+        <div class="account-card">
+          <div>
+            <h3>Checking</h3>
+            <p>Get the top rates and instant checking access without monthly fees.</p>
+          </div>
+          <a href="#" class="btn btn-primary">View Details</a>
+        </div>
+        <div class="account-card">
+          <div>
+            <h3>Savings</h3>
+            <p>Earn high interest rates of up to 4.5% APY on your savings easily.</p>
+          </div>
+          <a href="#" class="btn btn-primary">View Details</a>
+        </div>
+        <div class="account-card">
+          <div>
+            <h3>Business</h3>
+            <p>Promote sales, manage payroll, and access smart business loans.</p>
+          </div>
+          <a href="#" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANAGE YOUR MONEY EASILY -->
+    <section class="manage-section">
+      <div>
+        <h2 class="section-title">Manage Your Money Easily</h2>
+        <div class="manage-item">
+          <div class="feature-icon">💳</div>
+          <div>
+            <h4>Debit Card</h4>
+            <p>Control spending with customized debit card notifications and limits.</p>
+          </div>
+        </div>
+        <div class="manage-item">
+          <div class="feature-icon">📊</div>
+          <div>
+            <h4>Investments</h4>
+            <p>Seamlessly monitor your investments and portfolio growth in real time.</p>
+          </div>
+        </div>
+        <div class="manage-item">
+          <div class="feature-icon">⚙️</div>
+          <div>
+            <h4>Financial Tools</h4>
+            <p>Build budgets and automate savings with intuitive financial tools.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="phone-mockup" style="height: 380px;">
+          <div class="phone-screen">
+            <div class="phone-header">
+              <small>Budgeting</small>
+              <div class="phone-balance">On Track</div>
+            </div>
+            <div class="phone-body">
+              <div class="phone-row">
+                <span>Monthly Budget</span>
+                <strong>75% Used</strong>
+              </div>
+              <div class="phone-row">
+                <span>Savings Goal</span>
+                <strong>5000 / 10000</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="testimonial">
+      <div class="avatar">DB</div>
+      <div class="testimonial-text">
+        <p>"A banking experience that just works. Highly recommended!"</p>
+        <div class="stars">★★★★★</div>
+        <small>— Devang Bisartii.</small>
+      </div>
+    </section>
+
+    <!-- MOBILE APP BANNER -->
+    <section class="app-banner">
+      <div>
+        <h2>Digital Bank Mobile App</h2>
+        <p>Experience seamless digital banking on the go. Simple, secure, smart.</p>
+      </div>
+      <div class="store-buttons">
+        <a href="#" class="store-btn"> App Store</a>
+        <a href="#" class="store-btn">▶ Google Play</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="#" class="logo" style="color: white;">
+          <span class="logo-icon">▲</span> Digital Bank
+        </a>
+        <div class="footer-links">
+          <a href="#">Products</a>
+          <a href="#">Accounts</a>
+          <a href="#">Legal</a>
+          <a href="#">Support</a>
+          <a href="#">Company</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2026 Digital Bank Digital Bank. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
